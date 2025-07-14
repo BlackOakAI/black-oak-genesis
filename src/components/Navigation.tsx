@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -35,7 +34,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/d55373d2-0084-45e1-afb3-f51828ac2254.png" 
               alt="Black Oak AI" 
-              className="h-10 w-auto"
+              className="h-20 w-auto bg-transparent opacity-80"
             />
           </div>
 
@@ -56,11 +55,13 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              className="bg-black-oak-copper-500 hover:bg-black-oak-copper-600 text-white font-medium px-6 py-2 rounded-md transition-colors duration-200"
-            >
-              Get Started
-            </Button>
+            <a href="#contact">
+              <Button 
+                className="bg-black-oak-copper-500 hover:bg-black-oak-copper-600 text-white font-medium px-6 py-2 rounded-md transition-colors duration-200"
+              >
+                Get Started
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}

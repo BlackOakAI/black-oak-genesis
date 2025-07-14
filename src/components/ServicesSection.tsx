@@ -78,12 +78,7 @@ const ServicesSection = () => {
                 ))}
               </ul>
               
-              <Button 
-                variant="outline"
-                className="w-full border-black-oak-copper-500 text-black-oak-copper-500 hover:bg-black-oak-copper-500 hover:text-white transition-all duration-300"
-              >
-                Learn More
-              </Button>
+              
             </div>
           ))}
         </div>

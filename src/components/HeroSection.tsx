@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Zap, Shield, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,15 +14,15 @@ const HeroSection = () => {
         <div className="animate-fade-in">
           {/* Logo */}
           <div className="mb-8">
-            <img 
-              src="/lovable-uploads/d55373d2-0084-45e1-afb3-f51828ac2254.png" 
-              alt="Black Oak AI" 
-              className="h-24 w-auto mx-auto mb-6"
+            <img
+              src="/lovable-uploads/d55373d2-0084-45e1-afb3-f51828ac2254.png"
+              alt="Black Oak AI"
+              className="mx-auto h-56 md:h-72 w-auto mb-4"
             />
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+          <h1 className="mt-12 text-5xl md:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
             Black Oak
             <span className="block text-black-oak-copper-500">AI</span>
           </h1>
@@ -52,20 +51,24 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg"
-              className="bg-black-oak-copper-500 hover:bg-black-oak-copper-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
-            >
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Button>
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-2 border-black-oak-copper-500 text-black-oak-copper-500 hover:bg-black-oak-copper-500 hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
-            >
-              Watch Demo
-            </Button>
+            <a href="#contact">
+              <Button 
+                size="lg"
+                className="bg-black-oak-copper-500 hover:bg-black-oak-copper-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
+              >
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </Button>
+            </a>
+            <a href="#demo">
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-2 border-black-oak-copper-500 text-black-oak-copper-500 hover:bg-black-oak-copper-500 hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+              >
+                Watch Demo
+              </Button>
+            </a>
           </div>
         </div>
       </div>

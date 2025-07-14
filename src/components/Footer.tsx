@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 
@@ -48,7 +47,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/d55373d2-0084-45e1-afb3-f51828ac2254.png" 
               alt="Black Oak AI" 
-              className="h-12 w-auto mb-6"
+              className="h-28 w-auto mb-4"
             />
             <p className="text-gray-300 mb-6 leading-relaxed">
               Transforming businesses through intelligent automation. Premium AI solutions for the modern enterprise.
@@ -58,15 +57,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-black-oak-copper-500" />
-                <span className="text-gray-300">hello@blackoakai.com</span>
+                <span className="text-gray-300">BlackOakAI@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-black-oak-copper-500" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+1 (804) 986-6966</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-black-oak-copper-500" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">Richmond,VA</span>
               </div>
             </div>
           </div>
@@ -78,7 +77,7 @@ const Footer = () => {
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <a 
-                    href={link.href} 
+                    href={link.name === 'About Us' ? '#about' : link.name === 'Our Services' ? '#services' : link.href}
                     className="text-gray-300 hover:text-black-oak-copper-500 transition-colors duration-200"
                   >
                     {link.name}

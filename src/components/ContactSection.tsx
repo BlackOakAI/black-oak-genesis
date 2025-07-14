@@ -39,19 +39,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@blackoakai.com",
+      details: "BlackOakAI@gmail.com",
       description: "Get in touch for inquiries and support"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+1 (804) 986-6966",
       description: "Speak directly with our team"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "San Francisco, CA",
+      details: "Richmond, VA",
       description: "Schedule an in-person consultation"
     }
   ];
