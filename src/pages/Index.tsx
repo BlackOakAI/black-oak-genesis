@@ -16,7 +16,7 @@ const Index = () => {
       <AboutSection />
       <ServicesSection />
       {/* <DemoSection id="demo"/> */}
-      <div className="text-center py-20">
+      <div id="demo" className="text-center py-20">
         <h2 className="text-3xl font-bold mb-4">Demos Coming Soon!</h2>
         <p>Check back later for interactive demonstrations of our technology.</p>
       </div>
