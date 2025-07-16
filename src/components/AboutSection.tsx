@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Brain, Cog, Users, Award } from 'lucide-react';
+import { Player } from '@lottiefiles/react-lottie-player';
+import brainAnimation from '../assets/lottie/brain.json'; // adjust path if needed
 
 const AboutSection = () => {
   const features = [
@@ -65,7 +67,12 @@ const AboutSection = () => {
           {/* Image placeholder */}
           <div className="bg-gradient-to-br from-black-oak-800 to-black-oak-900 rounded-2xl h-96 flex items-center justify-center">
             <div className="text-center text-white">
-              <Brain className="w-16 h-16 mx-auto mb-4 text-black-oak-copper-500" />
+              <Player
+                autoplay
+                loop
+                src={brainAnimation}
+                style={{ height: '220px', width: '220px' }}
+              />
               <p className="text-lg font-medium">AI Innovation Hub</p>
               <p className="text-sm text-gray-300 mt-2">Where Technology Meets Excellence</p>
             </div>

@@ -71,3 +71,31 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Backend Server for Contact Form
+
+A backend server is provided in the `server` folder to handle contact form submissions and send emails using Node.js, Express, and Nodemailer.
+
+### Setup
+1. Navigate to the `server` directory:
+   ```bash
+   cd server
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the `server` directory with your email credentials:
+   ```env
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-password
+   EMAIL_TO=your-email@gmail.com
+   ```
+4. Start the server:
+   ```bash
+   node index.js
+   ```
+
+### Usage
+- The frontend should send a POST request to `http://localhost:5000/api/contact` with the form data (name, email, company, message).
+- The backend will send an email to the address specified in `EMAIL_TO`.

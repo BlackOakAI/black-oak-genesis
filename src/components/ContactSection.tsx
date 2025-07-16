@@ -13,6 +13,7 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,24 +23,40 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after submission
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
-    }, 3000);
+    setError("");
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("company", formData.company);
+    data.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvgqoknp", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', company: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 4000);
+      } else {
+        setError("There was an error submitting the form. Please try again.");
+      }
+    } catch (err) {
+      setError("There was an error submitting the form. Please try again.");
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email Us",
-      details: "BlackOakAI@gmail.com",
+      details: "blackoakai@gmail.com",
       description: "Get in touch for inquiries and support"
     },
     {
@@ -130,7 +147,7 @@ const ContactSection = () => {
                 <p className="text-gray-600">We'll get back to you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -190,11 +207,11 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full"
+                    className="w-full mb-6"
                     placeholder="Tell us about your project and how we can help..."
                   />
                 </div>
-
+                {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <Button 
                   type="submit"
                   size="lg"

@@ -94,6 +94,9 @@ const ServicesSection = () => {
           <Button 
             size="lg"
             className="bg-black-oak-copper-500 hover:bg-black-oak-copper-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Schedule Consultation
           </Button>
